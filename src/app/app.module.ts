@@ -21,7 +21,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { ItemCardsHistoryComponent } from './item-cards-history/item-cards-history.component';
 import { MatSelectModule } from '@angular/material/select';
-import { FilterComponent } from './filter/filter.component';
+import { SortingComponent } from './sorting/sorting.component';
 import { PaginatorComponent } from './paginator/paginator.component';
 import { AccountComponent } from './account/account.component';
 import { ResultComponent } from './result/result.component';
@@ -48,7 +48,7 @@ const routes: Routes = [
     AddProductComponent,
     HistoryComponent,
     ItemCardsHistoryComponent,
-    FilterComponent,
+    SortingComponent,
     PaginatorComponent,
     AccountComponent,
     ResultComponent

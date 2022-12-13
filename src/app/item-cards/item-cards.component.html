@@ -1,6 +1,6 @@
 <div class="centered">
     <span *ngIf="isAdmin()">
-        ( {{checkedItems.length}}  selected )
+        ( {{checkedItems.length}} selected )
     </span>
     <div class="list">
         <ng-container *ngFor="let item of (items | 
@@ -8,7 +8,8 @@
             <div class="item-card">
                 <div class="centered">
                     <ng-container *ngIf="isAdmin(); else user">
-                        <input class="form-check-input" type="checkbox" value="" (change)="checkboxSelect(item, $event)" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" (change)="checkboxSelect(item, $event)"
+                            id="flexCheckDefault">
                     </ng-container>
                     <ng-template #user>
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" [attr.fill]="saveColorItem(item)"
@@ -54,7 +55,7 @@
 
 </div>
 <ng-container *ngIf="isAdmin()">
-    
+
     <div class="list-btn">
         <button class="btn decline" (click)="declineSelected();reload()" [disabled]="checkedItems.length == 0">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg"
@@ -74,8 +75,11 @@
         </button>
     </div>
 </ng-container>
-<app-paginator [items]="items" [pageSize]="8" (outLowValue)="lowValue = $event"
+<div class="paginator">
+    <app-paginator [items]="items" [pageSize]="8" (outLowValue)="lowValue = $event"
     (outHighValue)="highValue = $event"></app-paginator>
+</div>
+
 
 
 <p-dialog [header]="'Details of item'" [(visible)]="display" [style]="{
@@ -115,7 +119,7 @@
         <div class="centered">
             <ng-container *ngIf="isAdmin(); else notAdmin">
                 <div class="list-btn">
-                    <button class="btn decline" (click)="decline(selectedItem)">
+                    <button class="btn decline" (click)="decline(selectedItem);reload()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-x-lg" viewBox="0 0 16 16">
                             <path
@@ -123,7 +127,7 @@
                         </svg>
                         Decline
                     </button>
-                    <button class="btn accept" (click)="accept(selectedItem)">
+                    <button class="btn accept" (click)="accept(selectedItem);reload()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-check-lg" viewBox="0 0 16 16">
                             <path

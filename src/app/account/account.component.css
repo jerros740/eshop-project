@@ -11,3 +11,21 @@
     color: white;
     background-color: #F96167;
 }
+
+
+.error {
+    border: 3px solid #a94442;
+}
+
+.error-text {
+    color: red;
+}
+
+form {
+    margin-bottom: 15px ;
+}
+
+.password {
+    padding: 15px 0px;
+    width: 300px;
+}

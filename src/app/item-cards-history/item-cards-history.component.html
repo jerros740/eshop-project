@@ -1,4 +1,4 @@
-<app-filter [items]="items"></app-filter>
+<app-sorting [items]="items"></app-sorting>
 <ng-container *ngFor="let item of (items | 
 slice: lowValue : highValue); index as i">
     <div class="mycard">
@@ -54,4 +54,5 @@ slice: lowValue : highValue); index as i">
     </div>
 </ng-container>
 
-<app-paginator [items]="items" [pageSize]="3" (outLowValue)="lowValue = $event" (outHighValue)="highValue = $event"></app-paginator>
+<app-paginator [items]="items" [pageSize]="3" (outLowValue)="lowValue = $event"
+(outHighValue)="highValue = $event"></app-paginator>

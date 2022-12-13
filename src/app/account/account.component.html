@@ -2,34 +2,49 @@
 <div class="main-content container">
     <h3>Personal details</h3>
     <div class="row ">
-        <div class="col-sm-6">
+        <div class="col-sm-12">
             <div class="user-form">
                 <form>
                     <label for="fname">Username : </label>
                     <input type="text" id="fusername" name="fusername" [value]="user.username" disabled><br><br>
                     <label for="fname">First name : </label>
-                    <input type="text" id="fname" name="fname" [value]="user.firstname" [disabled]="!canEdit"><br><br>
+                    <input type="text" id="fname" name="fname" [(ngModel)]="user.firstname"
+                        [disabled]="!canEdit"><br><br>
                     <label for="lname">Last name :</label>
-                    <input type="text" id="lname" name="lname" [value]="user.lastname" [disabled]="!canEdit"><br><br>
-                    <label for="lname">Last name :</label>
-                    <input type="text" id="lname" name="lname" [value]="user.lastname" [disabled]="!canEdit"><br><br>
-                    <button type="submit" class="btn" (click)="edit()">Edit</button>
+                    <input type="text" id="lname" name="lname" [(ngModel)]="user.lastname"
+                        [disabled]="!canEdit"><br><br>
+                    <label for="address">Adress :</label>
+                    <input type="text" id="address" name="address" [(ngModel)]="user.adress"
+                        [disabled]="!canEdit"><br><br>
+                    <button type="submit" class="btn" (click)="edit()">
+                        <span *ngIf="canEdit">
+                            Save changes
+                        </span>
+                        <span *ngIf="!canEdit">
+                            Edit
+                        </span>
+                    </button>
+
+                </form>
+
+                <form [formGroup]="passwordForm" (ngSubmit)="changePassword()">
+                    <div class="password">
+                        New password
+                        <input type="password" class="form-control" pInputText formControlName="newPwd"
+                            [ngClass]="{ 'error' : isFormSubmitted && !isPasswordValid() }">
+                        <span *ngIf="this.passwordForm.get('newPwd')?.value.length < 6 && isFormSubmitted"
+                            class="error-text">The password must contain at least 6 characters</span>
+                    </div>
+                    <div class="password">
+                        Repeat password
+                        <input type="password" class="form-control" pInputText formControlName="checkPwd"
+                            [ngClass]="{ 'error' : isFormSubmitted && !isPasswordValid() }">
+                        <span *ngIf="isFormSubmitted && !isPasswordValid()"
+                            class="error-text">The password doesn't match</span>
+                    </div>
+                    <button type="submit" class="btn">Change password</button>
                 </form>
             </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="address-form ">
-                <form>
-                    <label for="fname">Username : </label>
-                    <input type="text" id="fusername" name="fusername" [value]="user.username" disabled><br><br>
-                    <label for="fname">First name : </label>
-                    <input type="text" id="fname" name="fname" [value]="user.firstname" [disabled]="!canEdit"><br><br>
-                    <label for="lname">Last name :</label>
-                    <input type="text" id="lname" name="lname" [value]="user.lastname" [disabled]="!canEdit"><br><br>
-                    <button type="submit" class="btn" (click)="edit()">Edit</button>
-                </form>
-            </div>
-           
+
         </div>
     </div>
-</div>

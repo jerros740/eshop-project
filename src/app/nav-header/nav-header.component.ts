@@ -34,8 +34,9 @@ export class NavHeaderComponent implements OnInit {
 
   logout(): void {
     this.userService.logout();
-    this.router.navigate(['/home']);
-    this.refresh()
+    this.router.navigate(['/home']).then(() => {
+      this.refresh()
+    });
   }
 
   refresh(): void {

@@ -63,9 +63,10 @@ export class AddProductComponent implements OnInit {
 
       };
       reader.readAsDataURL(this.fileSelected);
-      this.router.navigate(['./home'])
-      window.location.reload()
-      console.log('Valid')
+      this.router.navigate(['./home']).then(()=>{
+        window.location.reload()
+      })
+      
     }
   }
 

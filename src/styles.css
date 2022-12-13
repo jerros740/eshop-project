@@ -1,12 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css'; 
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .main-content {
     margin-top: 150px;
-    
+
 }
 
 a {
@@ -20,10 +21,12 @@ a {
 }
 
 
-h3{
+h3 {
     text-align: center;
 }
 
-.footer {
-    position: fixed;
+
+.mat-paginator {
+    display: flex !important;
+    justify-content: center !important;
 }

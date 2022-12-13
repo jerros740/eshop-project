@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Item } from '../shared/models/item';
 
 @Component({
-  selector: 'app-filter',
-  templateUrl: './filter.component.html',
-  styleUrls: ['./filter.component.css']
+  selector: 'app-sorting',
+  templateUrl: './sorting.component.html',
+  styleUrls: ['./sorting.component.css']
 })
-export class FilterComponent implements OnInit {
+export class SortingComponent implements OnInit {
 
   @Input() items: Item[] = []
 

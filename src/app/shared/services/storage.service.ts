@@ -106,7 +106,6 @@ export class StorageService {
         purchaseItems.push(items[i])
       }
     }
-
     return purchaseItems;
   }
 
@@ -144,7 +143,9 @@ export class StorageService {
       return new User();
     } else {
       const user: User = JSON.parse(userSessionJson);
-      return user;
+      const updatedUser: User = this.getUserWithUsername(user.username) || new User();
+      
+      return updatedUser;
     }
   }
 
@@ -273,6 +274,7 @@ export class StorageService {
     for (let i = 0; i < users.length; i++) {
       if (users[i].username == user.username) {
         users[i] = user;
+        console.log(users[i])
         localStorage.setItem('user', JSON.stringify(users));
         break;
       }

@@ -8,6 +8,7 @@ export class User {
     lastname: string = '';
     mail: string = '';
     admin : boolean = false;
+    adress: string =''
     favorites: number[] = []
     
     constructor() {}
