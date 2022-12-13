@@ -1,0 +1,111 @@
+<app-nav-header></app-nav-header>
+<div class="form-details ">
+    <span class="header-form centered">
+        <strong>Details</strong>
+    </span>
+    <div class=" centered">
+        <form class="form-group" [formGroup]="itemForm" (ngSubmit)="addItemToVerification()">
+            <table style="width: 100%;">
+                <tr>
+                    <th width="50%">
+                        <div class=" padding-10">
+                            Title<sup style="color: red;">★</sup>
+                            <input type="text" class="form-control" formControlName="title" required>
+                            <div *ngIf=" itemForm.get('title')!.invalid && (itemForm.get('title')!.dirty || itemForm.get('title')!.touched)"
+                                class="error">
+                                This title is missing
+                            </div>
+                        </div>
+                    </th>
+                    <th width="25%">
+                        <div class=" padding-10">
+                            Price<sup style="color: red;">★</sup>
+                            <input type="number" class="form-control" formControlName="price" required>
+                            <div *ngIf=" itemForm.get('price')!.invalid && (itemForm.get('price')!.dirty || itemForm.get('price')!.touched)"
+                                class="error">
+                                This price is missing
+                            </div>
+                        </div>
+                    </th>
+                    <th width="25%">
+                        <div class=" padding-10">
+                            Category<sup style="color: red;">★</sup>
+                            <select class="form-control" formControlName="category">
+                                <option *ngFor="let item of category.value" [value]="item">
+                                    {{item}}
+                                </option>
+                            </select>
+                            <div *ngIf=" itemForm.get('category')!.invalid && (itemForm.get('category')!.dirty || itemForm.get('category')!.touched)"
+                                class="error">
+                                This category is missing
+                            </div>
+                        </div>
+                    </th>
+                </tr>
+                
+            </table>
+
+            <table width="100%">
+                <tr>
+                    <th width="100%">
+                        <div class="padding-10">
+                            Description<sup style="color: red;">★</sup>
+                            <textarea type="text" class="form-control" formControlName="description"
+                                required></textarea>
+                            <div *ngIf=" itemForm.get('description')!.invalid && (itemForm.get('description')!.dirty || itemForm.get('description')!.touched)"
+                                class="error">
+                                This description is missing
+                            </div>
+                        </div>
+                    </th>
+                </tr>
+            </table>
+
+            <table width="100%">
+                <tr>
+                    <th width="100%">
+                        <div class="padding-10">
+                            <input class="form-control " type="file" id="fileForm" formControlName="img"
+                                (change)="onFileSelected($event)" multiple required="">
+                            <div *ngIf=" itemForm.get('img')!.invalid && (itemForm.get('img')!.dirty || itemForm.get('img')!.touched)"
+                                class="error">
+                                Add at least one picture
+                            </div>
+                        </div> 
+                    </th>
+                </tr>
+                <tr class="centered">
+                    <div class="padding-10">
+                        <ng-container *ngIf="fileString">
+                            Preview
+                            <img [src]="fileString">
+                        </ng-container>
+                    </div>
+                </tr>
+                <tr>
+                    
+                </tr>
+            </table>
+            <!--
+               <div class="upload-pictures">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
+                    class="bi bi-file-earmark-plus" viewBox="0 0 16 16">
+                    <path
+                        d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5z" />
+                    <path
+                        d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z" />
+                </svg>
+            </div> 
+            -->
+            
+
+            <div class="padding-10 centered btn-confirm">
+                <div matTooltip="Fill all required field" [matTooltipDisabled]="this.itemForm.valid">
+                    <button type="submit" mat-raised-button class="btn" [disabled]="!this.itemForm.valid">
+                        Sell this item
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

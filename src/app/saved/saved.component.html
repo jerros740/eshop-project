@@ -1,0 +1,10 @@
+<app-nav-header></app-nav-header>
+<div class="main-content">
+    <div class="filter">
+        <app-filter [items]="savedItem"></app-filter>
+    </div>
+    <h3>Saved</h3>
+    <div class="footer">
+        <app-item-cards [items]="savedItem"></app-item-cards>
+    </div>
+</div>

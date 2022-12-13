@@ -1,0 +1,31 @@
+<app-nav-header></app-nav-header>
+<div class="main-content ">
+    <h3>History</h3>
+    <ng-container *ngIf="isAdmin(); else user">
+        <mat-tab-group mat-align-tabs="center">
+
+            <mat-tab label="Accepted">
+                <app-item-cards-history [items]="itemsAccepted"></app-item-cards-history>
+            </mat-tab>
+            <mat-tab label="Declined">
+                <app-item-cards-history [items]="itemsDeclined"></app-item-cards-history>
+            </mat-tab>
+        </mat-tab-group>
+    </ng-container>
+    <ng-template #user>
+        <mat-tab-group mat-align-tabs="center">
+
+            <mat-tab label="Purchase">
+                <app-item-cards-history [items]="itemsPurchase"></app-item-cards-history>
+            </mat-tab>
+            <mat-tab label="Sold">
+                <app-item-cards-history [items]="itemsSold"></app-item-cards-history>
+            </mat-tab>
+            <mat-tab label="Your items">
+                <app-item-cards-history [items]="itemsUser"></app-item-cards-history>
+            </mat-tab>
+        </mat-tab-group>
+    </ng-template>
+    
+
+</div>

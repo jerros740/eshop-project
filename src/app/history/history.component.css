@@ -1,0 +1,22 @@
+.main-content {
+    margin-top: 150px;
+}
+
+.mat-tab-label {
+    width: 250px !important;
+    padding: 5px;
+    background-color: #ff4747;
+    color: white;
+}
+
+
+
+.mat-tab-label.mat-tab-label-active {
+    width: 250px !important;
+    padding: 5px;
+    background-color: #ff4747;
+    color: white;
+}
+
+
+

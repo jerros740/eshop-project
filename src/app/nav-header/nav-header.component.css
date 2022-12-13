@@ -1,0 +1,93 @@
+.bar-container {
+    background-color: #F96167;
+    height: 90px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    z-index: 10;
+    box-shadow: 3px 3px 3px #e79597;
+}
+
+.add-header,
+.add-header:hover {
+    margin-top: 25px;
+    padding: 5px 5px;
+    text-align: center;
+    background-color: #ff8989;
+    width: auto;
+    height: auto;
+    border-radius: 0px 0px 10px 10px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    box-shadow: 3px 3px 3px #e79597;
+}
+
+.add-header:hover {
+    background-color: #ff4747;
+    cursor: pointer;
+}
+
+input,
+input:active {
+    border-radius: 0 5px 5px 0;
+    height: 40px;
+    max-width: 550px;
+    border-color: transparent;
+    background-color: #ffc2c4;
+    margin-top: 25px;
+}
+
+.input-group-text {
+    height: 40px;
+    background-color: #ffc2c4;
+}
+
+.web-icon {
+    height: 70px;
+    width: 75px;
+}
+
+.logo {
+    left: 10px;
+    color: white;
+    margin-left: 75px;
+    margin-top: 10px;
+}
+
+.list-btn {
+    display: inline-block;
+}
+
+i {
+    width: 2px;
+    position: relative;
+    right: 30px;
+    font-size: 20px;
+    line-height: 40px;
+    cursor: pointer;
+    z-index: 1;
+    color: #03045fc7;
+}
+
+
+button {
+    border-color: transparent;
+    color: white;
+}
+
+button:hover {
+    color: #000000;
+    border-color: transparent;
+}
+
+button:active {
+    vertical-align: top;
+    padding: 8px 13px 6px;
+}
+
+.row {
+    margin-top: 10px;
+}

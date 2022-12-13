@@ -1,0 +1,15 @@
+
+.btn-edit {
+    border-radius: 10px;
+    background-color: #FF7979;
+}
+
+.btn-edit:hover {
+    background-color: #fd9191;
+}
+
+.form-select {
+    background-color: #ffc2c4;
+    margin: 0 auto;
+    width: 325px;
+}

@@ -1,0 +1,11 @@
+<app-nav-header></app-nav-header>
+<div class="main-content">
+    <h3>Result(s) for {{searchValue}}</h3>
+    <div class="filter">
+        <app-filter [items]="items"></app-filter>
+    </div>
+    
+    <div class="footer">*
+        <app-item-cards [items]="items"></app-item-cards>
+    </div>
+</div>

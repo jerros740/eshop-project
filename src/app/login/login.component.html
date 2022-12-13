@@ -1,0 +1,68 @@
+<app-nav-header></app-nav-header>
+<div *ngIf="!isLogin()" class="login-create">
+    <div class="login">
+        <div class="header-login">
+            <img src="assets/web-icon.png" class="web-icon">
+            <br>
+            Login
+        </div>
+        <form class="form-group" [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="username">
+                Username
+                <input type="text" class="form-control" pInputText formControlName="usernameLogin" required
+                    [ngClass]="{'error': (!loginForm.valid || !loginSuccess)&& isLoginSubmitted}">
+
+            </div>
+
+            <div class="password">
+                Password
+                <input type="password" class="form-control" pInputText [(ngModel)]="pwdLogin" formControlName="pwdLogin"
+                    required [ngClass]="{'error': (!loginForm.valid || !loginSuccess)&& isLoginSubmitted}">
+
+            </div>
+
+            <button class="submit">Login</button>
+            <br>
+            <span *ngIf="(!loginForm.valid || !loginSuccess)&& isLoginSubmitted" style="color: red;">Wrong username
+                and/or password</span>
+        </form>
+    </div>
+
+    <div class="newAccount">
+        <div class="header-login">
+            <img src="assets/web-icon.png" class="web-icon">
+            <br>
+            New account
+        </div>
+        <form class="form-group" [formGroup]="createForm" (ngSubmit)="createAccount()">
+            <div class="username">
+                Username
+                <input type="text" class="form-control" pInputText formControlName="usernameCreate"
+                    [ngClass]="{ 'error' : isCreateSubmitted && (isUsernameTaken || this.createForm.get('usernameCreate')?.value == '')}">
+                <span *ngIf="isUsernameTaken && this.usernameCreate != '' && isCreateSubmitted" class="error-text">This
+                    user name is already taken</span>
+                <span
+                    *ngIf="this.createForm.get('usernameCreate')?.value == '' && isCreateSubmitted"
+                    class="error-text">Put a username</span>
+            </div>
+
+            <div class="password">
+                Password
+                <input type="password" class="form-control" pInputText formControlName="pwdCreate"
+                    [ngClass]="{ 'error' : isCreateSubmitted && !isPasswordCreateValid }">
+                <span *ngIf="this.createForm.get('pwdCreate')?.value.length < 6 && isCreateSubmitted"
+                    class="error-text">The password must contain at least 6 characters</span>
+            </div>
+
+            <div class="password">
+                Confirm your password
+                <input type="password" class="form-control" pInputText formControlName="pwdCheck"
+                    [ngClass]="{ 'error' : isCreateSubmitted && !isPasswordValid() }">
+                <span
+                    *ngIf="!isPasswordValid() && isCreateSubmitted"
+                    class="error-text">The password doesn't match</span>
+            </div>
+            <button type="submit">Create an account</button>
+        </form>
+    </div>
+</div>

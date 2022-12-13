@@ -1,0 +1,129 @@
+.item-card {
+    height: auto;
+    max-height: 25%;
+    width: 18%;
+    background-color: #facaca;
+    margin: 10px 10px 5px 5px;
+    border-radius: 10px;
+    padding: 12px 12px;
+    z-index: 0;
+}
+
+.item-card:hover {
+    cursor: pointer;
+    background-color: #ffa4a4;
+}
+
+.list {
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.centered {
+    display: grid;
+    place-items: center;
+}
+
+.img {
+    margin-top: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.content {
+    background-color: #facaca;
+    padding: 10px;
+    border-radius: 10px;
+    height: 100%;
+    position: relative;
+}
+
+.title {
+    text-decoration: underline;
+}
+
+.list-btn {
+    display: flex;
+    justify-content: center;
+}
+
+button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: all !important;
+}
+
+
+.save-btn:hover {
+    fill: rgb(255, 154, 154);
+    cursor: pointer;
+}
+
+.p-modal {
+    width: 75% !important;
+    height: 100% !important;
+    background-color: #ffa4a4;
+    border-radius: 10px;
+}
+
+.img_modal {
+    width: 45%;
+    height: 75%;
+}
+
+.btn {
+    justify-content: center;
+    bottom: 0px;
+    color: white;
+    background-color: #F96167;
+    margin: 10px;
+}
+
+.accept {
+    background-color: green;
+}
+
+.accept:hover {
+    background-color: rgb(91, 135, 91);
+}
+
+.decline {
+    background-color: red;
+}
+
+.decline:hover {
+    background-color: rgba(255, 0, 0, 0.348);
+}
+
+.btn:hover {
+    color: white;
+}
+
+.price {
+    font-size: 25px;
+}
+
+.description,
+.price,
+.seller,
+.date {
+    margin-bottom: 15px;
+}
+
+.description {
+    word-wrap: break-word;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}

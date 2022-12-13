@@ -1,0 +1,10 @@
+.filter {
+    position: fixed;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}

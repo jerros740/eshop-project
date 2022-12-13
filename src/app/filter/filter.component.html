@@ -1,0 +1,5 @@
+<select [(ngModel)]="selectedOption"(ngModelChange)="sort($event)" class="form-select">
+    <option *ngFor="let o of options">
+       {{o.name}}
+    </option>
+ </select>
