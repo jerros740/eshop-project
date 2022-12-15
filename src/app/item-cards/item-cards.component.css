@@ -74,8 +74,10 @@ button:disabled {
 }
 
 .img_modal {
-    width: 45%;
-    height: 75%;
+    width: 35%;
+    height:  300px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .btn {
