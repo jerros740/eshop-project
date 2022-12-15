@@ -6,7 +6,7 @@
         <ng-container *ngFor="let item of (items | 
         slice: lowValue : highValue); index as i">
             <div class="item-card">
-                <div class="centered">
+                <div class="centered" >
                     <ng-container *ngIf="isAdmin(); else user">
                         <input class="form-check-input" type="checkbox" value="" (change)="checkboxSelect(item, $event)"
                             id="flexCheckDefault">
@@ -22,14 +22,13 @@
                         <img [src]="item.base64Image" id="image_item" class="img" (click)="showDialog(item)">
                     </div>
                 </div>
-                <div (click)="showDialog(item)">
+                <div (click)="showDialog(item)" class="content-card">
                     <br>
                     <div class="title"> {{item.title}} </div>
-                    <br>
+                    
                     <div class="price">
                         <strong>{{item.price}} &euro;</strong>
                     </div>
-                    <br>
                     <div class="seller">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-person-bounding-box" viewBox="0 0 16 16">
@@ -39,7 +38,6 @@
                         </svg>
                         {{item.username}}
                     </div>
-                    <br>
                     <div class="date"> {{item.date}}</div>
                 </div>
             </div>

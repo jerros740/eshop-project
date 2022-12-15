@@ -22,16 +22,18 @@ export class SortingComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.selectedOption)
+    this.sort(this.selectedOption)
   }
 
   sort(event: any): void {
     console.log(this.items)
     switch (event) {
       case this.options[0].name:
-        this.sortByDate('asc');
+        this.sortByDate('desc');
         break;
       case this.options[1].name:
-        this.sortByDate('desc');
+        this.sortByDate('asc');
         break;
       case this.options[2].name:
         this.sortByPrice('asc');
